@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+
+    <link rel="stylesheet" href="css/gallery.css">
+
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <h2 class="city-name">Mombasa</h2>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="heritage.html">Heritage Sites</a></li>
+                <li><a href="hotel.html">Hotel Booking</a></li>
+            </ul>
+            <a href="login.html"><img src="images/logo.png" class="sign-in"></a>
+        </nav>
+        <br>
+        <h1 class="header">G A L L E R Y</h1>
+
+        <section>
+            <ul>
+                <li class="list active" data-filter="all">All</li>
+                <li class="list" data-filter="beaches">Beaches</li>
+                <li class="list" data-filter="hotels">Hotels</li>
+                <li class="list" data-filter="cuisine">Cuisine</li>
+                <li class="list" data-filter="raha">Raha</li>
+            </ul>
+            <div class="product">
+                <div class="itemBox beaches"><img src="images/beach1.jpg"></div>
+                <div class="itemBox hotels"><img src="images/hotel1.jpg"></div>
+                <div class="itemBox cuisine"><img src="images/cuisine1.jpg"></div>
+                <div class="itemBox raha"><img src="images/raha1.jpg"></div>
+                <div class="itemBox beaches"><img src="images/beach2.jpg"></div>
+                <div class="itemBox hotels"><img src="images/hotel2.jpg"></div>
+                <div class="itemBox cuisine"><img src="images/cuisine2.jpg"></div>
+                <div class="itemBox raha"><img src="images/raha2.jpg"></div>
+                <div class="itemBox beaches"><img src="images/beach3.jpg"></div>
+                <div class="itemBox hotels"><img src="images/hotel3.jfif"></div>
+                <div class="itemBox cuisine"><img src="images/cuisine3.jpg"></div>
+                <div class="itemBox raha"><img src="images/raha5.jpg"></div>
+                <div class="itemBox beaches"><img src="images/beach4.jpg"></div>
+                <div class="itemBox hotels"><img src="images/hotel4.jfif"></div>
+                <div class="itemBox cuisine"><img src="images/cuisine4.jpg"></div>
+                <div class="itemBox raha"><img src="images/raha3.jpg"></div>
+                <div class="itemBox beaches"><img src="images/beach6.jpg"></div>
+                <div class="itemBox hotels"><img src="images/hotel5.jpg"></div>
+                <div class="itemBox cuisine"><img src="images/cuisine5.jpg"></div>
+                <div class="itemBox raha"><img src="images/raha4.jpg"></div>
+                
+            </div>
+        </section>
+    </div>
+    <script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.list').click(function(){
+                const value = $(this).attr('data-filter');
+                if (value == 'all'){
+                    $('.itemBox').show('1000');
+                }
+                else{
+                    $('.itemBox').not('.'+value).hide('1000');
+                    $('.itemBox').filter('.'+value).show('1000');
+                }
+            })
+            $('.list').click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
+            })
+        })
+    </script>
+
+</body>
+</html>
